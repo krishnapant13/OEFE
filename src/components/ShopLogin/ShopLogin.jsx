@@ -8,7 +8,7 @@ import axios from "axios";
 const ShopLogin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [visible, setVisibility] = useState(false);
+  const [visible, setVisibility] = useState(false)
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
