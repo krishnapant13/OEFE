@@ -34,10 +34,10 @@ const Signup = () => {
         setName("");
         setPassword("");
         setEmail("");
-        setAvatar("");
+        setAvatar(null);
       })
       .catch((error) => {
-        toast.error("User already exists", error);
+        toast.error(`User already exists: ${error}`);
       });
   };
   return (

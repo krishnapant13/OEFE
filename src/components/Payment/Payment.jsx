@@ -73,7 +73,6 @@ const Payment = () => {
   };
 
   const onApprove = async (data, actions) => {
-    console.log("ddd");
     // return actions.order.capture().then(function (details) {
     //   const { payer } = details;
 

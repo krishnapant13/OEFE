@@ -75,7 +75,7 @@ const Header = ({ activeHeading }) => {
   });
   return (
     <>
-      <div className={`${styles.section}`}>
+      {/* <div className={`${styles.section}`}>
         {user && user?.email === "krishnapant1303@gmail.com" && (
           <div className="hidden 800px:h-[50px] pt-5 mb-4 800px:flex justify-end items-center ">
             <div
@@ -93,7 +93,7 @@ const Header = ({ activeHeading }) => {
             </div>
           </div>
         )}
-      </div>
+      </div> */}
       <div
         className={`${
           active === true

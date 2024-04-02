@@ -15,6 +15,7 @@ const CheckoutPage = () => {
       <br />
       <br />
       <Footer />
+      {/* Uncomment the code in checkout Page */}
     </div>
   );
 };

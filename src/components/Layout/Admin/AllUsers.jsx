@@ -71,7 +71,6 @@ const AllUsers = () => {
       type: "number",
       sortable: false,
       renderCell: (params) => {
-        console.log(params);
         return (
           <>
             <Button
