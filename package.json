@@ -1,6 +1,6 @@
 {
+  "homepage": "http://krishnapant13.github.io/OEFE",
   "name": "frontend",
-  "homepage": "https://krishnapant13.github.io/OEFE",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
