@@ -97,7 +97,7 @@ const App = () => {
     }
   }, [stripeApikey]);
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="oe-store" >
       {stripeApikey && (
         <Elements stripe={key}>
           <Routes>
