@@ -22,13 +22,13 @@ const ShopCreate = () => {
     const file = e.target.files[0];
     setAvatar(file);
   };
-
+  console.log("email", email);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (email !== "krishnapant1303@gmail.com") {
-      toast.error("You are not authorized to become a seller");
-      return;
-    }
+    // if (email !== "krishnapant1303@gmail.com") {
+    //   toast.error("You are not authorized to become a seller");
+    //   return;
+    // }
     const config = { headers: { "Content-Type": "multipart/form-data" } };
     const newForm = new FormData();
     newForm.append("file", avatar);
@@ -41,6 +41,7 @@ const ShopCreate = () => {
     axios
       .post(`${server}/shop/create-shop`, newForm, config)
       .then((res) => {
+        console.log("this", res.data);
         toast.success(res.data.message);
         setName("");
         setPassword("");

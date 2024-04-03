@@ -70,14 +70,14 @@ const App = () => {
   const [key, setKey] = useState(null);
   async function getStripeApiKey() {
     const { data } = await axios.get(`${server}/payment/stripeapikey`);
-    setStripeApiKey(data.stripeapikey);
+    setStripeApiKey(data?.stripeapikey);
   }
   useEffect(() => {
     Store.dispatch(loadUser());
     Store.dispatch(loadSeller());
     Store.dispatch(getAllProducts());
     Store.dispatch(getAllEvents());
-    // getStripeApiKey();
+    getStripeApiKey();
     const handleNetworkChange = () => {
       setIsNetworkError(!navigator.onLine);
     };
