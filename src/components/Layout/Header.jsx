@@ -16,7 +16,7 @@ import logo1 from "../../assets/logo/logo.png";
 import NavBar from "./NavBar.jsx";
 import { useSelector } from "react-redux";
 import WishList from "../WishList/WishList";
-import { backend_url } from "../../server";
+import { backend_url, frontend_url } from "../../server";
 
 const Header = ({ activeHeading }) => {
   const { isAuthenticated, user } = useSelector((state) => state.user);
@@ -236,7 +236,7 @@ const Header = ({ activeHeading }) => {
           <div>
             <Link to="/">
               <img
-                src="http://localhost:3000/static/media/logo.11feb78e9bf4464c112c.jpeg"
+                src={`${frontend_url}/static/media/logo.11feb78e9bf4464c112c.jpeg`}
                 alt=""
                 className="mt-3 cursor-pointer w-[40px] h-[40px] rounded-full"
               />

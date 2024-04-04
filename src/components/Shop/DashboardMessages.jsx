@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useRef, useState } from "react";
 import { useEffect } from "react";
-import { backend_url, server } from "../../server";
+import { backend_url, frontend_url, server } from "../../server";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { AiOutlineArrowRight, AiOutlineSend } from "react-icons/ai";
@@ -299,7 +299,7 @@ const SellerInbox = ({
             >
               {item.sender !== sellerId && (
                 <img
-                  src="http://localhost:3000/static/media/logo.11feb78e9bf4464c112c.jpeg"
+                  src={`${frontend_url}/static/media/logo.11feb78e9bf4464c112c.jpeg`}
                   alt=""
                   className="w-[45px] h-[45px] rounded-full "
                 />

@@ -310,7 +310,7 @@ const SellerInbox = ({
             >
               {item.sender !== sellerId && (
                 <img
-                  src="http://localhost:3000/static/media/logo.11feb78e9bf4464c112c.jpeg"
+                  src={`${server}/static/media/logo.11feb78e9bf4464c112c.jpeg`}
                   alt=""
                   className="w-[40px] h-[40px] rounded-full"
                 />
