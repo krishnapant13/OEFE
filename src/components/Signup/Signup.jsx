@@ -12,33 +12,39 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [visible, setVisibility] = useState(false);
-  const [avatar, setAvatar] = useState(null);
+  const [avatar, setAvatar] = useState("");
 
   const handleFileInputChange = (e) => {
-    const file = e.target.files[0];
-    setAvatar(file);
+    setAvatar(e.target.files[0]);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const config = { headers: { "Content-Type": "multipart/form-data" } };
-    const newForm = new FormData();
-    newForm.append("file", avatar);
-    newForm.append("name", name);
-    newForm.append("email", email);
-    newForm.append("password", password);
-    axios
-      .post(`${server}/user/create-user`, newForm, config)
-      .then((res) => {
-        toast.success(res.data.message);
-        setName("");
-        setPassword("");
-        setEmail("");
-        setAvatar(null);
-      })
-      .catch((error) => {
-        toast.error(`User already exists: ${error}`);
-      });
+    try {
+      const newForm = new FormData();
+      newForm.append("file", avatar);
+      newForm.append("name", name);
+      newForm.append("email", email);
+      newForm.append("password", password);
+      axios
+        .post(`${server}/user/create-user`, newForm, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
+        .then((res) => {
+          toast.success(res.data.message);
+          setName("");
+          setPassword("");
+          setEmail("");
+          setAvatar("");
+        })
+        .catch((error) => {
+          toast.error(`${error}`);
+        });
+    } catch (error) {
+      toast.error(`Failed to create user: ${error}`);
+    }
   };
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-900 via-purple to-black flex flex-col justify-center  p-2 800px:p-0">
@@ -51,16 +57,13 @@ const Signup = () => {
         <div className="bg-white py-10 shadow sm:rounded-lg px-10">
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
+              <label className="block text-sm font-medium text-gray-700">
                 Full Name
               </label>
               <div className="mt-1">
                 <input
                   type="text"
-                  name="text"
+                  name="name"
                   autoComplete="name"
                   required
                   value={name}
@@ -70,10 +73,7 @@ const Signup = () => {
               </div>
             </div>{" "}
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
+              <label className="block text-sm font-medium text-gray-700">
                 Email Address
               </label>
               <div className="mt-1">
@@ -89,10 +89,7 @@ const Signup = () => {
               </div>
             </div>
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
+              <label className="block text-sm font-medium text-gray-700">
                 Password
               </label>
               <div className="mt-1 relative">
@@ -144,7 +141,7 @@ const Signup = () => {
                   <span className="cursor-pointer">Uplod a file</span>
                   <input
                     type="file"
-                    name="avatar"
+                    name="file"
                     id="file-input"
                     accept=".jpg,.jpeg,.png"
                     onChange={handleFileInputChange}

@@ -25,7 +25,7 @@ const ShopSettings = () => {
     const file = e.target.files[0];
     setAvatar(file);
     const formData = new FormData();
-    formData.append("image", e.target.files[0]);
+    formData.append("file", e.target.files[0]);
     await axios
       .put(`${server}/shop/update-shop-avatar`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
@@ -67,9 +67,7 @@ const ShopSettings = () => {
             <label htmlFor="image" className="cursor-pointer">
               <img
                 src={
-                  avatar
-                    ? URL.createObjectURL(avatar)
-                    : `${backend_url}/${seller && seller.avatar}`
+                  avatar ? URL.createObjectURL(avatar) : seller && seller?.avatar
                 }
                 alt=""
                 className="w-[200px] h-[200px] rounded-full"

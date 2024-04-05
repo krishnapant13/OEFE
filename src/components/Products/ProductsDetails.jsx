@@ -147,7 +147,7 @@ const ProductsDetails = ({ data }) => {
                         className={`w-1/4 sm:w-1/6 md:w-1/4 cursor-pointer`}
                       >
                         <img
-                          src={`${backend_url}${i}`}
+                          src={i}
                           alt=""
                           className={`w-full h-auto ${
                             select === index ? "border" : ""
@@ -234,7 +234,7 @@ const ProductsDetails = ({ data }) => {
                 <div className="flex items-center pt-8">
                   <Link to={`/shop/preview/${data?.shop._id}`}>
                     <img
-                      src={`${backend_url}${data?.shop?.avatar}`}
+                      src={data?.shop?.avatar}
                       alt=""
                       className="w-[50px] h-[50px] rounded-full mr-2"
                     />
@@ -337,9 +337,9 @@ const ProductDetailsInfo = ({
         <div className="w-full min-h-[40vh] flex flex-col items-center py-3 overflow-y-scroll">
           {data &&
             data?.reviews?.map((item, index) => (
-              <div className="w-full flex my-2">
+              <div className="w-full flex my-2" key={index}>
                 <img
-                  src={`${backend_url}/${item.user.avatar}`}
+                  src={item?.user?.avatar}
                   alt=""
                   className="w-[50px] h-[50px] rounded-full"
                 />
@@ -364,7 +364,7 @@ const ProductDetailsInfo = ({
             <Link to={`/shop/preview/${data.shop._id}`}>
               <div className="flex items-center">
                 <img
-                  src={`${backend_url}${data?.shop?.avatar}`}
+                  src={data?.shop?.avatar}
                   className="w-[50px] h-[50px] rounded-full"
                   alt=""
                 />

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import { backend_url, server } from "../../server";
+import { server } from "../../server";
 import styles from "../../styles/styles";
 import {
   AiOutlineCamera,
@@ -32,7 +32,7 @@ const ProfileSection = () => {
     const file = e.target.files[0];
     setAvatar(file);
     const formdata = new FormData();
-    formdata.append("image", e.target.files[0]);
+    formdata.append("file", e.target.files[0]);
     await axios
       .put(`${server}/user/update-avatar`, formdata, {
         headers: {
@@ -58,7 +58,7 @@ const ProfileSection = () => {
           <div className="relative">
             <img
               className="h-40 w-40 rounded-full object-cover border-[3px] border-[#3ad132] "
-              src={`${backend_url}${user && user?.avatar}`}
+              src={user && user?.avatar}
               alt=""
             />
             <div className="w-[30px] h-[30px] bg-[#E3E9EE] rounded-full flex items-center justify-center cursor-pointer absolute bottom-[5px] right-[5px] ">
