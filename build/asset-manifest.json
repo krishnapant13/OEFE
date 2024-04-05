@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/OEFE/static/css/main.2be73396.css",
-    "main.js": "/OEFE/static/js/main.b92c2f35.js",
+    "main.js": "/OEFE/static/js/main.24c859f7.js",
     "static/js/787.cda612ba.chunk.js": "/OEFE/static/js/787.cda612ba.chunk.js",
     "static/media/logo.jpeg": "/OEFE/static/media/logo.11feb78e9bf4464c112c.jpeg",
     "static/media/logo.png": "/OEFE/static/media/logo.4feba8f656fa4b1b1375.png",
@@ -11,11 +11,11 @@
     "static/media/slick.woff": "/OEFE/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/OEFE/index.html",
     "main.2be73396.css.map": "/OEFE/static/css/main.2be73396.css.map",
-    "main.b92c2f35.js.map": "/OEFE/static/js/main.b92c2f35.js.map",
+    "main.24c859f7.js.map": "/OEFE/static/js/main.24c859f7.js.map",
     "787.cda612ba.chunk.js.map": "/OEFE/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2be73396.css",
-    "static/js/main.b92c2f35.js"
+    "static/js/main.24c859f7.js"
   ]
 }
