@@ -46,8 +46,6 @@ import { ShopHomePage } from "./routes/ShopRoutes.js";
 import SellerProtectedRoute from "./routes/SellerProtectedRoute";
 import axios from "axios";
 import { server } from "./server";
-import { getAllProducts } from "./redux/actions/product";
-import { getAllEvents } from "./redux/actions/event";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import NetworkCheck from "./components/Layout/NetworkCheck";
@@ -73,10 +71,6 @@ const App = () => {
     setStripeApiKey(data?.stripeapikey);
   }
   useEffect(() => {
-    Store.dispatch(loadUser());
-    Store.dispatch(loadSeller());
-    Store.dispatch(getAllProducts());
-    Store.dispatch(getAllEvents());
     getStripeApiKey();
     const handleNetworkChange = () => {
       setIsNetworkError(!navigator.onLine);
