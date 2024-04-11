@@ -60,6 +60,7 @@ import {
 } from "./routes/AdminProtectedRoute";
 
 import ProtectedARoute from "./routes/ProtectedARoutes";
+import Ribbon from "./static/Ribbon.jsx";
 
 const App = () => {
   const [stripeApikey, setStripeApiKey] = useState("");
@@ -106,7 +107,7 @@ const App = () => {
           </Routes>
         </Elements>
       )}
-      {isNetworkError && <NetworkCheck />}{" "}
+      {isNetworkError && <NetworkCheck />}{" "}<Ribbon />
       {/* Render the popup if there's a network error */}
       {/* ...other routes and components */}
       <Routes>

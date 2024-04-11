@@ -29,7 +29,6 @@ const Login = () => {
       )
       .then((res) => {
         toast.success("Login Success");
-        console.log("res.data", res.data);
         navigate("/");
         dispatch(loadUser());
         dispatch(loadSeller());
