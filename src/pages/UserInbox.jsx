@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import { AiOutlineArrowRight, AiOutlineSend } from "react-icons/ai";
 import { TfiGallery } from "react-icons/tfi";
-const ENDPOINT = "http://localhost:4000";
+const ENDPOINT = "https://oesocket.onrender.com";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
 const UserInbox = () => {
@@ -275,7 +275,6 @@ const SellerInbox = ({
   scrollRef,
   // handleImageUpload,
 }) => {
-  console.log(userData);
   return (
     <div className="w-[full] min-h-full flex flex-col justify-between p-5">
       {/* message header */}
@@ -307,6 +306,7 @@ const SellerInbox = ({
                 item.sender === sellerId ? "justify-end" : "justify-start"
               }`}
               ref={scrollRef}
+              key={index}
             >
               {item.sender !== sellerId && (
                 <img

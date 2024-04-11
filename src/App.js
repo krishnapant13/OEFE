@@ -62,6 +62,8 @@ import {
 import ProtectedARoute from "./routes/ProtectedARoutes";
 import Ribbon from "./static/Ribbon.jsx";
 
+import { getAllProducts } from "./redux/actions/product.js";
+import { getAllEvents } from "./redux/actions/event.js";
 const App = () => {
   const [stripeApikey, setStripeApiKey] = useState("");
   const [isNetworkError, setIsNetworkError] = useState(false); // Add the state
@@ -77,6 +79,10 @@ const App = () => {
       setIsNetworkError(!navigator.onLine);
     };
 
+    Store.dispatch(loadSeller());
+    Store.dispatch(loadUser());
+    Store.dispatch(getAllProducts());
+    Store.dispatch(getAllEvents());
     window.addEventListener("online", handleNetworkChange);
     window.addEventListener("offline", handleNetworkChange);
 
@@ -107,7 +113,7 @@ const App = () => {
           </Routes>
         </Elements>
       )}
-      {isNetworkError && <NetworkCheck />}{" "}<Ribbon />
+      {isNetworkError && <NetworkCheck />} <Ribbon />
       {/* Render the popup if there's a network error */}
       {/* ...other routes and components */}
       <Routes>

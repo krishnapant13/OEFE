@@ -8,7 +8,6 @@ import { Country, State } from "country-state-city";
 import { deleteUserAddress, updatUserAddress } from "../../redux/actions/user";
 
 const UserAddress = ({ active }) => {
-  console.log(active);
   const [open, setOpen] = useState(false);
   const [country, setCountry] = useState("");
   const [city, setCity] = useState("");
