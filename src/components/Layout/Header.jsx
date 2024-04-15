@@ -236,7 +236,7 @@ const Header = ({ activeHeading }) => {
           <div>
             <Link to="/">
               <img
-                src={`${frontend_url}/static/media/logo.11feb78e9bf4464c112c.jpeg`}
+                src={logo}
                 alt=""
                 className="mt-3 cursor-pointer w-[40px] h-[40px] rounded-full"
               />

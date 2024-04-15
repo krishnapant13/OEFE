@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import { AiOutlineArrowRight, AiOutlineSend } from "react-icons/ai";
 import { TfiGallery } from "react-icons/tfi";
+import logo from "../assets/logo/logo.jpeg"
 const ENDPOINT = "https://oesocket.onrender.com";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
@@ -310,7 +311,7 @@ const SellerInbox = ({
             >
               {item.sender !== sellerId && (
                 <img
-                  src={`${server}/static/media/logo.11feb78e9bf4464c112c.jpeg`}
+                  src={logo}
                   alt=""
                   className="w-[40px] h-[40px] rounded-full"
                 />

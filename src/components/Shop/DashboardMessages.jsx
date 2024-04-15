@@ -9,6 +9,7 @@ import { TfiGallery } from "react-icons/tfi";
 import styles from "../../styles/styles";
 import socketIO from "socket.io-client";
 import { format } from "timeago.js";
+import logo from "../../assets/logo/logo.jpeg"
 const ENDPOINT = "https://oesocket.onrender.com";
 const socketId = socketIO(ENDPOINT, { transports: ["websocket"] });
 
@@ -298,7 +299,7 @@ const SellerInbox = ({
             >
               {item.sender !== sellerId && (
                 <img
-                  src={`${frontend_url}/static/media/logo.11feb78e9bf4464c112c.jpeg`}
+                  src={logo}
                   alt=""
                   className="w-[45px] h-[45px] rounded-full "
                 />

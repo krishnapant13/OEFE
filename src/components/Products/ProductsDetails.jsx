@@ -133,7 +133,7 @@ const ProductsDetails = ({ data }) => {
                 {data && (
                   <div className="w-full flex justify-center mt-3">
                     <img
-                      src={`${backend_url}${data.images[select]}`}
+                      src={data.images[select]}
                       alt=""
                       className="w-[80%] max-w-screen-md"
                     />
