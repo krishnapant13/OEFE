@@ -131,6 +131,11 @@ const Login = () => {
                 Sign Up
               </Link>
             </div>
+            <div className={`${styles.normalFlex} w-full`}>
+              <Link to="/shop-login" className="text-blue-600">
+                Login as Seller
+              </Link>
+            </div>
           </form>
         </div>
       </div>
