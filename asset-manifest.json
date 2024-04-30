@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/OEFE/static/css/main.9b34af2c.css",
-    "main.js": "/OEFE/static/js/main.b7d102c5.js",
+    "main.css": "/OEFE/static/css/main.189972dc.css",
+    "main.js": "/OEFE/static/js/main.92e6eacb.js",
     "static/js/787.cda612ba.chunk.js": "/OEFE/static/js/787.cda612ba.chunk.js",
     "static/media/logo.jpeg": "/OEFE/static/media/logo.11feb78e9bf4464c112c.jpeg",
     "static/media/logo.png": "/OEFE/static/media/logo.4feba8f656fa4b1b1375.png",
@@ -10,12 +10,12 @@
     "static/media/slick.ttf": "/OEFE/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "static/media/slick.woff": "/OEFE/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/OEFE/index.html",
-    "main.9b34af2c.css.map": "/OEFE/static/css/main.9b34af2c.css.map",
-    "main.b7d102c5.js.map": "/OEFE/static/js/main.b7d102c5.js.map",
+    "main.189972dc.css.map": "/OEFE/static/css/main.189972dc.css.map",
+    "main.92e6eacb.js.map": "/OEFE/static/js/main.92e6eacb.js.map",
     "787.cda612ba.chunk.js.map": "/OEFE/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.9b34af2c.css",
-    "static/js/main.b7d102c5.js"
+    "static/css/main.189972dc.css",
+    "static/js/main.92e6eacb.js"
   ]
 }
