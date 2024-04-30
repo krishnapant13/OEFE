@@ -6,12 +6,14 @@ import { server } from "../../server";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import { loadUser } from "../../redux/actions/user";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [visible, setVisibility] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch()
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios
@@ -25,6 +27,7 @@ const Login = () => {
       )
       .then((res) => {
         toast.success("Login Success");
+        dispatch(loadUser());
         navigate("/");
       })
       .catch((err) => {
